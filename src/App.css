@@ -78,15 +78,16 @@ html{
 }
 
 .paper {
-  width: 90%; 
+  display: block; /* explicitly avoid flexbox context bugs */
+  width: 90vw; /* relative to viewport */
   max-width: 400px; 
-  aspect-ratio: 4 / 5;
+  height: 500px; /* Fixed robust height */
   margin-top: 30px;
   background-image: url("/img/paper.png");
-  background-size: 100% 100%;
+  background-size: 100% 100%; /* Stretch background exactly to box */
   background-position: center;
   background-repeat: no-repeat;
-  padding: 15% 12%;
+  padding: 60px 45px; /* Explicit pixel values guarantee perfect wide layout */
   overflow-y: auto; 
   box-sizing: border-box;
 
@@ -107,27 +108,36 @@ html{
 }
 
 .letter {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
   font-family: "Special Elite", system-ui;
   font-optical-sizing: auto;
-  font-size: 1rem;
+  font-size: 1.05rem; /* slightly larger */
+  line-height: 1.6; /* improved readability */
   font-style: normal;
-  text-align: justify; 
+  text-align: left; /* Changed from justify to prevent weird spacing */
   overflow-wrap: break-word;
   color: rgb(113, 98, 73);
+  margin: 0;
+  padding: 0;
 }
 
 
 @media (max-width: 768px) {
-  .text{
+  .text {
     font-size: 2rem;
   }
 
   .paper {
-      width: 95%;
+      width: 95vw;
+      height: 70vh; /* Better responsive height for mobile */
+      max-height: 550px;
+      padding: 50px 30px; /* Tighter padding for mobile screens */
   }
 
-  .letter{
-    font-size: 0.9rem;
+  .letter {
+    font-size: 0.95rem;
   }
 }
 
