@@ -78,21 +78,32 @@ html{
 }
 
 .paper {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
   width: 90%; 
   max-width: 400px; 
   aspect-ratio: 4 / 5;
-  height: auto;
   margin-top: 30px;
   background-image: url("/img/paper.png");
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 12% 10% 12% 10%;
+  padding: 15% 12%;
   overflow-y: auto; 
   box-sizing: border-box;
+
+  /* Custom scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(113, 98, 73, 0.4) transparent;
+}
+
+.paper::-webkit-scrollbar {
+  width: 6px;
+}
+.paper::-webkit-scrollbar-track {
+  background: transparent;
+}
+.paper::-webkit-scrollbar-thumb {
+  background-color: rgba(113, 98, 73, 0.4);
+  border-radius: 10px;
 }
 
 .letter {
@@ -102,9 +113,6 @@ html{
   font-style: normal;
   text-align: justify; 
   overflow-wrap: break-word;
-  width: 100%;
-  padding: 0;
-  margin: auto;
   color: rgb(113, 98, 73);
 }
 
