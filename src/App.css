@@ -96,7 +96,7 @@ html{
 .letter {
   font-family: "Special Elite", system-ui;
   font-optical-sizing: auto;
-  font-size: 1rem;
+  font-size: 0.7rem;
   font-style: normal;
   text-align: justify; 
   overflow-wrap: break-word;
