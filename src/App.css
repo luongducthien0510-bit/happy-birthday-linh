@@ -80,17 +80,19 @@ html{
 .paper {
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 400px; 
-  height: 500px; 
+  align-items: flex-start;
+  width: 90%; 
+  max-width: 400px; 
+  aspect-ratio: 4 / 5;
+  height: auto;
   margin-top: 30px;
   background-image: url("/img/paper.png");
-  background-size: contain;
+  background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 20px;
+  padding: 12% 10% 12% 10%;
   overflow-y: auto; 
-  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .letter {
@@ -100,8 +102,9 @@ html{
   font-style: normal;
   text-align: justify; 
   overflow-wrap: break-word;
-  padding: 50px;
-  padding-right: 60px;
+  width: 100%;
+  padding: 0;
+  margin: auto;
   color: rgb(113, 98, 73);
 }
 
@@ -112,13 +115,11 @@ html{
   }
 
   .paper {
-      width: 300px; 
-      height: 400px; 
+      width: 95%;
   }
 
   .letter{
-    font-size: 1rem;
-    padding: 30px;
+    font-size: 0.9rem;
   }
 }
 
